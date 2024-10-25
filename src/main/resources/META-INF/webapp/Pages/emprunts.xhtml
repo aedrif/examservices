@@ -1,0 +1,14 @@
+<h:dataTable value="#{CDController.empruntsUtilisateur}" var="emprunt">
+    <h:column>
+        <f:facet name="header">Titre</f:facet>
+        #{emprunt.cd.titre}
+    </h:column>
+    <h:column>
+        <f:facet name="header">Date d'Emprunt</f:facet>
+        #{emprunt.dateEmprunt}
+    </h:column>
+    <h:column>
+        <f:facet name="header">Action</f:facet>
+        <h:commandButton value="Retourner" action="#{CDController.retournerCD(emprunt.id)}"/>
+    </h:column>
+</h:dataTable>

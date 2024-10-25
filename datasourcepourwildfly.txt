@@ -1,0 +1,14 @@
+<datasource jndi-name="java:/jdbc/MySqlDS" pool-name="MySqlDS" enabled="true" use-java-context="true">
+    <connection-url>jdbc:mysql://localhost:3306/cinema_db</connection-url>
+    <driver>mysql</driver>
+    <security>
+        <user-name>your_username</user-name>
+        <password>your_password</password>
+    </security>
+</datasource>
+
+<drivers>
+    <driver name="mysql" module="com.mysql">
+        <driver-class>com.mysql.cj.jdbc.Driver</driver-class>
+    </driver>
+</drivers>

@@ -1,0 +1,24 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+             version="2.2">
+    <persistence-unit name="cinemaPU">
+        <!-- JTA data source for application servers -->
+        <jta-data-source>java:/jdbc/MySqlDS</jta-data-source>
+
+        <properties>
+            <!-- Dialect for MySQL -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+            <!-- Automatically update the database schema -->
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <!-- Show SQL queries in the console -->
+            <property name="hibernate.show_sql" value="true"/>
+            <!-- Format SQL queries -->
+            <property name="hibernate.format_sql" value="true"/>
+            <!-- Use comments in SQL queries -->
+            <property name="hibernate.use_sql_comments" value="true"/>
+            <!-- Specify character encoding -->
+            <property name="hibernate.connection.charSet" value="UTF-8"/>
+        </properties>
+    </persistence-unit>
+</persistence>

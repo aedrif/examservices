@@ -1,0 +1,23 @@
+<!-- listCDs.xhtml -->
+<h:dataTable value="#{cdController.cds}" var="cd">
+    <h:column>
+        <f:facet name="header">Title</f:facet>
+        #{cd.title}
+    </h:column>
+    <h:column>
+        <f:facet name="header">Artist</f:facet>
+        #{cd.artist}
+    </h:column>
+    <h:column>
+        <f:facet name="header">Availability</f:facet>
+        #{cd.isAvailable ? 'Available' : 'Not Available'}
+    </h:column>
+    <h:column>
+        <f:facet name="header">Action</f:facet>
+        <h:commandButton value="Borrow" action="#{cdController.borrowCD}"
+                         rendered="#{cd.isAvailable}">
+            <f:setPropertyActionListener target="#{cdController.selectedCDId}"
+                                         value="#{cd.id}"/>
+        </h:commandButton>
+    </h:column>
+</h:dataTable>
